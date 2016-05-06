@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 public class ShapePanel extends JPanel
 {
 	private ArrayList<Rectangle> rectangleList;
+	private ArrayList<Rectangle> squareList;
 	private ArrayList<Ellipse2D> ellipseList;
 	private ArrayList<Ellipse2D> circleList;
 	private ArrayList<Polygon> triangleList;
@@ -26,6 +27,7 @@ public class ShapePanel extends JPanel
 		circleList = new ArrayList<Ellipse2D>();
 		ellipseList = new ArrayList<Ellipse2D>();
 		rectangleList = new ArrayList<Rectangle>();
+		squareList = new ArrayList<Rectangle>();
 	}
 	
 	public void addRectangle()
@@ -41,12 +43,24 @@ public class ShapePanel extends JPanel
 	
 	public void addSquare()
 	{
+		int xPosition = (int)(Math.random() * 700);
+		int yPosition = (int)(Math.random() * 700);
+		int width =(int)(Math.random() * 700);
+		int height = width;
 		
+		Rectangle square = new Rectangle(xPosition, yPosition, width, height);
+		squareList.add(square);
 	}
 	
 	public void addEllipse()
 	{
+		int xPoint = (int)(Math.random() * 700);
+		int yPoint = (int)(Math.random() * 700);
+		int rectWidth = (int)(Math.random() * 700);
+		int rectHeight = (int)(Math.random() * 700);
 		
+		Ellipse2D ellipse = new Ellipse2D.Double(xPoint, yPoint, rectWidth, rectHeight);
+		ellipseList.add(ellipse);
 	}
 	
 	public void addCircle()
@@ -152,6 +166,7 @@ public class ShapePanel extends JPanel
 		rectangleList.clear();
 		triangleList.clear();
 		circleList.clear();
-		
+		squareList.clear();
+		ellipseList.clear();
 	}
 }
